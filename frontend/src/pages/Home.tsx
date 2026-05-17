@@ -1,5 +1,6 @@
 import { PrismaHero } from "@/components/ui/prisma-hero";
-import { useState, useRef, useEffect, KeyboardEvent } from "react";
+import { useState, useRef, useEffect } from "react";
+import type { KeyboardEvent } from "react";
 
 /* ─────────────────────────────────────────────────────────────
    Chatbot – zero extra dependencies
