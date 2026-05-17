@@ -97,6 +97,75 @@ export default function Login() {
               padding: "2.5rem",
             }}
           >
+            {/* Elephant mascot */}
+            <style>{`
+              @keyframes ellie-bob {
+                0%, 100% { transform: translateY(0px); }
+                50%       { transform: translateY(-6px); }
+              }
+              @keyframes ellie-blink {
+                0%, 94%, 100% { transform: scaleY(1); }
+                97%           { transform: scaleY(0.1); }
+              }
+              .ellie-body   { animation: ellie-bob 3s ease-in-out infinite; }
+              .ellie-eye    { animation: ellie-blink 4s ease-in-out infinite; transform-origin: center; }
+            `}</style>
+            <motion.div
+              initial={{ scale: 0.7, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              className="flex justify-center mb-4"
+            >
+              <svg
+                className="ellie-body"
+                width="90"
+                height="90"
+                viewBox="0 0 120 120"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-label="Elephant mascot"
+              >
+                {/* Body */}
+                <ellipse cx="62" cy="72" rx="36" ry="30" fill="#10b981" opacity="0.9"/>
+                {/* Head */}
+                <ellipse cx="62" cy="46" rx="26" ry="22" fill="#10b981" opacity="0.9"/>
+                {/* Left ear */}
+                <ellipse cx="36" cy="46" rx="13" ry="17" fill="#059669"/>
+                <ellipse cx="38" cy="46" rx="8"  ry="11" fill="#34d399" opacity="0.6"/>
+                {/* Right ear */}
+                <ellipse cx="88" cy="46" rx="13" ry="17" fill="#059669"/>
+                <ellipse cx="86" cy="46" rx="8"  ry="11" fill="#34d399" opacity="0.6"/>
+                {/* Trunk */}
+                <path
+                  d="M54 64 Q46 78 50 92 Q52 100 58 100 Q64 100 63 92 Q61 80 68 70"
+                  stroke="#059669" strokeWidth="9" strokeLinecap="round" fill="none"
+                />
+                {/* Legs */}
+                <rect x="34" y="95" width="14" height="16" rx="7" fill="#059669"/>
+                <rect x="52" y="97" width="14" height="14" rx="7" fill="#059669"/>
+                <rect x="70" y="97" width="14" height="14" rx="7" fill="#059669"/>
+                {/* Tail */}
+                <path d="M97 72 Q108 65 105 78" stroke="#059669" strokeWidth="4" strokeLinecap="round" fill="none"/>
+                {/* Eye left */}
+                <g className="ellie-eye">
+                  <circle cx="53" cy="41" r="5" fill="white"/>
+                  <circle cx="53" cy="41" r="3" fill="#064e3b"/>
+                  <circle cx="54.5" cy="39.5" r="1" fill="white"/>
+                </g>
+                {/* Eye right */}
+                <g className="ellie-eye">
+                  <circle cx="71" cy="41" r="5" fill="white"/>
+                  <circle cx="71" cy="41" r="3" fill="#064e3b"/>
+                  <circle cx="72.5" cy="39.5" r="1" fill="white"/>
+                </g>
+                {/* Tusk */}
+                <path d="M56 60 Q50 68 52 74" stroke="#a7f3d0" strokeWidth="3" strokeLinecap="round" fill="none"/>
+                {/* Blush */}
+                <ellipse cx="46" cy="52" rx="5" ry="3" fill="#34d399" opacity="0.5"/>
+                <ellipse cx="78" cy="52" rx="5" ry="3" fill="#34d399" opacity="0.5"/>
+              </svg>
+            </motion.div>
+
             {/* Header */}
             <motion.div
               initial={{ y: 16, opacity: 0 }}
